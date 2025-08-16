@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>幸運餅乾機</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="start.css">
+</head>
+<body>
+    <img src="png/gamelogo.png" alt="遊戲Logo" class="logo animate__animated animate__bounceInDown">
+    
+    <div class="button-container animate__animated animate__fadeInUp animate__delay-1s">
+        <div data-tooltip="開始你的幸運之旅!" class="button start-btn" onclick="startGame()">
+            <div class="button-wrapper">
+                <div class="text">開始遊戲</div>
+                <span class="icon">
+                    👍 GOOD LUCK
+                </span>
+            </div>
+        </div>
+        <button class="home-btn" type="button" onclick="goHome()">
+            <div class="home-btn-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" height="25px" width="25px">
+                    <path d="M224 480h640a32 32 0 1 1 0 64H224a32 32 0 0 1 0-64z" fill="#000000"></path>
+                    <path d="m237.248 512 265.408 265.344a32 32 0 0 1-45.312 45.312l-288-288a32 32 0 0 1 0-45.312l288-288a32 32 0 1 1 45.312 45.312L237.248 512z" fill="#000000"></path>
+                </svg>
+            </div>
+            <p class="home-btn-text">返回首頁</p>
+        </button>
+    </div>
+    
+    <div class="footer">
+        <img src="png/logo.png" alt="Tasksnap Logo" class="footer-logo">
+        <span>Powered by Tasksnap | Song made by Suno</span>
+    </div>
+
+    <script src="audio.js"></script>
+    <script src="start.js"></script>
+</body>
+</html>

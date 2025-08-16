@@ -1,0 +1,271 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('png/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.logo {
+    max-width: 600px;
+    width: 90%;
+    margin-bottom: 50px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+/* 開始遊戲按鈕樣式 */
+.start-btn.button {
+    --width: 280px;
+    --height: 70px;
+    --tooltip-height: 35px;
+    --tooltip-width: 150px;
+    --gap-between-tooltip-to-button: 18px;
+    --button-color: linear-gradient(135deg, #1B44BF 0%, #4A6FE7 50%, #0F2A8A 100%);
+    --tooltip-color: #fff;
+    width: var(--width);
+    height: var(--height);
+    background: var(--button-color);
+    position: relative;
+    text-align: center;
+    border-radius: 20px;
+    font-family: "Arial";
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 3px solid #fff;
+    box-shadow: 0 8px 20px rgba(27, 68, 191, 0.3), inset 0 2px 4px rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+}
+
+.start-btn.button::before {
+    position: absolute;
+    content: attr(data-tooltip);
+    width: var(--tooltip-width);
+    height: var(--tooltip-height);
+    background-color: #555;
+    font-size: 0.9rem;
+    color: #fff;
+    border-radius: .25em;
+    line-height: var(--tooltip-height);
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+    left: calc(50% - var(--tooltip-width) / 2);
+}
+
+.start-btn.button::after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: #555;
+    left: calc(50% - 10px);
+    bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+}
+
+.start-btn.button::after, .start-btn.button::before {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+}
+
+.start-btn .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+}
+
+.start-btn .button-wrapper, .start-btn .text, .start-btn .icon {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    color: #fff;
+}
+
+.start-btn .text {
+    top: 0;
+}
+
+.start-btn .text, .start-btn .icon {
+    transition: top 0.5s;
+}
+
+.start-btn .icon {
+    color: #fff;
+    top: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+}
+
+.start-btn.button:hover {
+    background: linear-gradient(135deg, #0F2A8A 0%, #1B44BF 50%, #0A1F6B 100%);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(27, 68, 191, 0.5), inset 0 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+.start-btn.button:hover .text {
+    top: -100%;
+}
+
+.start-btn.button:hover .icon {
+    top: 0;
+}
+
+.start-btn.button:hover:before, .start-btn.button:hover:after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.start-btn.button:hover:after {
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+}
+
+.start-btn.button:hover:before {
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+}
+
+/* 滑動按鈕樣式 */
+.home-btn {
+    background: white;
+    text-align: center;
+    width: 192px;
+    border-radius: 16px;
+    height: 56px;
+    position: relative;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.home-btn-icon {
+    background: #4ade80;
+    border-radius: 12px;
+    height: 48px;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    z-index: 10;
+    transition: width 0.5s ease;
+}
+
+.home-btn:hover .home-btn-icon {
+    width: 184px;
+}
+
+.home-btn-text {
+    transform: translateX(8px);
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* 版權標示樣式 */
+.footer {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 12px;
+}
+
+.footer-logo {
+    width: 20px;
+    height: 20px;
+}
+/* RWD 響應式設計 */
+@media (max-width: 768px) {
+    .logo {
+        max-width: 80vw;
+        margin-bottom: 30px;
+    }
+    
+    .button {
+        width: 200px;
+        height: 50px;
+        font-size: 16px;
+    }
+    
+    .home-btn {
+        width: 180px;
+        height: 45px;
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+    
+    .home-btn-text {
+        font-size: 14px;
+    }
+    
+    .footer {
+        font-size: 12px;
+        padding: 15px;
+    }
+    
+    .footer-logo {
+        height: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        max-width: 90vw;
+        margin-bottom: 20px;
+    }
+    
+    .button {
+        width: 180px;
+        height: 45px;
+        font-size: 14px;
+    }
+    
+    .button .text {
+        font-size: 14px;
+    }
+    
+    .button .icon {
+        font-size: 10px;
+    }
+    
+    .footer {
+        font-size: 10px;
+        padding: 10px;
+    }
+    
+    .footer-logo {
+        height: 20px;
+    }
+}
