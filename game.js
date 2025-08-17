@@ -2,11 +2,6 @@ function getFortune() {
     const btn = document.querySelector('.fortune-btn');
     const machine = document.querySelector('.cookie-machine');
     
-    // 暂停背景音樂
-    if (window.gameMusic && !window.gameMusic.paused) {
-        window.gameMusic.pause();
-    }
-    
     // 播放搖晃音效
     playShakeSound();
     
@@ -17,7 +12,7 @@ function getFortune() {
     setTimeout(() => {
         const fortune = getRandomFortune();
         
-        // 播放籤文音效（音效結束後會自動恢復背景音樂）
+        // 播放籤文音效
         playFortuneSound();
         
         let htmlContent = '';
