@@ -5,6 +5,9 @@ let bgMusic = null;
 function playShakeSound() {
     const audio = new Audio('music/funny.mp3');
     audio.volume = 0.8;
+    audio.addEventListener('ended', () => {
+        playBackgroundMusic();
+    });
     audio.play().catch(e => console.log('搖晃音效播放失敗:', e));
 }
 
