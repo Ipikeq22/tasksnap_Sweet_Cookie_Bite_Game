@@ -116,18 +116,20 @@ function shareContent(currentFortune, todayFortune) {
         }
     }
     
-    const shareText = `🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪
-🍪                                                                                                                             🍪
-🍪    今日運勢：                                                                                                  🍪
-🍪    ${todayFortuneText}                                      🍪
-🍪                                                                                                                             🍪
-🍪    ${currentFortune.category || '未知'}：                                                                                           🍪
-🍪    ${currentFortuneText}               🍪
-🍪                                                                                                                             🍪
-🍪    參觀tasksnap官網：                                                                                 🍪
-🍪    https://tasksnap-ytmctx95gflwfq9pxzje2z.streamlit.app/           🍪
-🍪                                                                                                                             🍪
-🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪`;
+    const shareText = `🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪
+🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪
+
+今日運勢：
+${todayFortuneText}
+
+${currentFortune.category || '未知'}：
+${currentFortuneText}
+
+參觀tasksnap官網：
+https://tasksnap-ytmctx95gflwfq9pxzje2z.streamlit.app/
+
+🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪
+🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪`;
     
     console.log('shareText:', shareText);
     
