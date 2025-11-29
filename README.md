@@ -1,9 +1,3 @@
-
----
-
-# 🎮 **Tasksnap《Lucky Cookie Bite》小遊戲 README（Markdown）**
-
-```markdown
 # 🍪 Lucky Cookie Bite – Tasksnap Mini Game
 一款使用 HTML + CSS + JavaScript 製作的輕量互動小遊戲。  
 玩家點擊幸運餅乾，即可獲得隨機祝福、任務或驚喜訊息，為 Tasksnap 專題增加趣味互動元素。
